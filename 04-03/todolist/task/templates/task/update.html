@@ -26,24 +26,32 @@
                       
                       <tr>
                           <th>#</th>
-                          <th>nama obat</th>
-                          <th>jenis obat</th>
-                          <th>quantity</th>
+                          <th>Merk</th>
+                          <th>Type</th>
+                          <th>Roasted</th>
+                          <th>Process</th>
+                          <th>Altitude</th>
                       </tr>
 
                     
                       <tr>
                         <td>{{data.id}}</td>
                         <td>
-                            <input type="text" name="namaobat" class="form-control" value="{{data.name}}">
+                            <input type="text" name="namaobat" class="form-control" value="{{data.merk_coffe}}">
                         </td>
                         <td>
-                          <input type="text" name="jenisobat" class="form-control" value="{{data.jenisobat}}"> 
+                          <input type="text" name="jenisobat" class="form-control" value="{{data.type_coffe}}"> 
                         </td>
                         <td>
-                          <input type="text" name="quantity" class="form-control" value="{{data.quantity}}">    
+                          <input type="text" name="quantity" class="form-control" value="{{data.roasteds}}">    
                         </td>
-                        </tr>
+                        <td>
+                          <input type="text" name="quantity" class="form-control" value="{{data.process}}">    
+                        </td>
+                        <td>
+                          <input type="text" name="quantity" class="form-control" value="{{data.altitudes}}">    
+                        </td>
+                      </tr>
                   </table>
                   <button class="btn btn-primary">SAVE</button>
                   </form>

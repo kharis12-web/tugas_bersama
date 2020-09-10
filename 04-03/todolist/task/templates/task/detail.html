@@ -22,8 +22,25 @@
           </div>
     
                 <table class=" table table-striped">
-                      
-                      <tr>
+                  <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Merk</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Roasted</th>
+                        <th scope="col">Process</th>
+                        <th scope="col">Altitudes</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td>{{data.merk_coffe}}</td>
+                        <td>{{data.type_coffe}}</td>
+                        <td>{{data.roasteds}}</td>
+                        <td>{{data.process}}</td>
+                        <td>{{data.altitudes}}</td>
+                    </tr>
+                  </tbody>
+                     <!--  <tr>
                           
                           <th>Nama obat</th>
                           <th>Jenis obat</th>
@@ -34,7 +51,7 @@
                         <td>{{data.name}}</td>
                         <td>{{data.jenisobat}}</td>
                         
-                        </tr>
+                        </tr> -->
                   </table>
                   <td>
                     <marquee bg color='warning' width='1000' height="500">Masih dalam Program Beta Version 0,1</marquee>
