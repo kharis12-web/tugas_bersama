@@ -84,7 +84,7 @@
         <div class="card-container">
           <div class="row">
               <div class="card-header text-center col-sm">
-                  <H1>Stok Obat</H1>
+                  <H1>Data Coffe</H1>
               </div>
           </div>
       
@@ -92,23 +92,31 @@
                 <form action="#" method="POST" class="mt-3">
                   {% csrf_token %}
 
-                  <label for="">Nama Obat</label>
-                  <input type="text" name="namaobat" class="form-control"/>
+                  <label for="">Merk</label>
+                  <input type="text" name="merk_coffe" class="form-control"/>
 
-                  <label for="">Jenis Obat</label>
-                    <input type="text" name="jenisobat" class="form-control"/>
+                  <label for="">Type</label>
+                    <input type="text" name="type_coffe" class="form-control"/>
 
-                  <label for="">Quantity</label>
-                    <input type="number" name="quantity" class="form-control"/>
-                    <button type="submit" class="btn btn-primary mt-1">Tambah</button>
+                  <label for="">Roasteds</label>
+                    <input type="number" name="roasteds" class="form-control"/>
+
+                  <label for="">Process</label>
+                    <input type="number" name="process" class="form-control"/>
+
+                  <label for="">Altitudes</label>
+                    <input type="number" name="altitudes" class="form-control"/>
+                  <button type="submit" class="btn btn-primary mt-1">Tambah</button>
                 </form>
 
                 <table class="table table-striped">
                       <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Nama obat</th>
-                        <th scope="col">Jenis obat</th>
-                        <th scope="col">Quantity</th>
+                        <th scope="col">Merk</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Roasteds</th>
+                        <th scope="col">Process</th>
+                        <th scope="col">Altitudes</th>
                         <th scope="col">Pilihan</th>
                       </tr>
                       <tr>
@@ -116,9 +124,11 @@
                       </tr>
                       <tr>
                         <td>{{forloop.counter}}</td>
-                        <td>{{d.name}}</td>
-                        <td>{{d.jenisobat}}</td>
-                        <td>{{d.quantity}}</td>
+                        <td>{{d.merk_coffe}}</td>
+                        <td>{{d.type_coffe}}</td>
+                        <td>{{d.roasteds}}</td>
+                        <td>{{d.process}}</td>
+                        <td>{{d.altitudes}}</td>
                         
 
                         <td>  

@@ -1,6 +1,7 @@
 from django.db import models
 class Task(models.Model):
-    name = models.TextField(default='')
-    jenisobat = models.TextField(default='')
-    quantity = models.TextField(default='')
-  
+	merk_coffe = models.TextField(default='')
+	type_coffe = models.TextField(default='')
+	roasteds = models.TextField(default='')
+	process = models.TextField(default='')
+	altitudes = models.TextField(default='')
