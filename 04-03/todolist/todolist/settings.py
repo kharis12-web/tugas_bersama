@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'task',
     'home',
     'suplayer',
-    'cabang',
+    'alat',
+    'stokkopi',
     
 ]
 
