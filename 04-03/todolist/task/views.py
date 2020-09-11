@@ -3,12 +3,8 @@ from . import models
 
 def index(req):
     if req.POST:
-        models.Task.objects.create(
-            merk_coffe=req.POST['merk_coffe'],
-            type_coffe=req.POST['type_coffe'],
-            roasteds=req.POST['roasteds'],
-            process=req.POST['process'],
-            altitudes=req.POST['altitudes'])
+        models.Task.objects.create(name=req.POST['namaobat'], 
+        jenisobat=req.POST['jenisobat'], quantity=req.POST['quantity'])
         return redirect('/task')
 
     tasks = models.Task.objects.all()
@@ -29,12 +25,8 @@ def delete(req, id):
 
 def update(req, id):
     if req.POST:
-        task = models.Task.objects.filter(pk=id).update(
-            merk_coffe=req.POST['merk_coffe'],
-            type_coffe=req.POST['type_coffe'],
-            roasteds=req.POST['roasteds'],
-            process=req.POST['process'],
-            altitudes=req.POST['altitudes'])
+        task = models.Task.objects.filter(pk=id).update(name=req.POST['namaobat'], 
+        jenisobat=req.POST['jenisobat'], quantity=req.POST['quantity'])
         return redirect('/task')
 
     task = models.Task.objects.filter(pk=id).first()

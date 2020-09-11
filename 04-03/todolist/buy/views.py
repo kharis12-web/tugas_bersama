@@ -20,3 +20,21 @@ def input(req):
 	return render(req, 'buy/input.html', {
 		'data' : buy,
 		})
+
+def delete(req, id):
+	models.Buy.objects.filter(pk=id).delete()
+	return redirect('/buy')
+
+def update(req, id):
+	if req.POST:
+		models.Buy.objects.filter(pk=id).update(
+			name=req.POST['name'],
+			brg=req.POST['brg'],
+			jmlh=req.POST['jmlh'],
+			price=req.POST['price'])
+		return redirect('/buy')
+
+	buy = models.Buy.objects.all()
+	return render(req, 'buy/update.html', {
+		'data' : buy,
+		})

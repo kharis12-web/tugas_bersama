@@ -7,6 +7,7 @@ urlpatterns = [
     path('suplayer/', include('suplayer.urls')),
     path('alat/', include('alat.urls')),
     path('stokkopi/', include('alat.urls')),
+    path('datakaryawan/', include('datakaryawan.urls')),
     path('', include('home.urls')),
 ]
 
