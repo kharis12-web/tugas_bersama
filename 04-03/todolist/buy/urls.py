@@ -6,5 +6,5 @@ urlpatterns=[
 	path('', views.index),
 	path('input/', views.input),
 	path('<id>/delete/', views.delete),
-	path('<id>/update/', views.update),
+	# path('<id>/update/', views.update),
 ]

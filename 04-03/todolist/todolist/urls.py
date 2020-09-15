@@ -9,6 +9,7 @@ urlpatterns = [
     path('stokkopi/', include('alat.urls')),
     path('datakaryawan/', include('datakaryawan.urls')),
     path('', include('home.urls')),
+    
 ]
 
 

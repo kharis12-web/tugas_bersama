@@ -7,7 +7,7 @@ def index(req):
         models.Karyawan.objects.create(name=req.POST['namaobat'], 
         jenisobat=req.POST['jenisobat'], quantity=req.POST['quantity'],
         alamat=req.POST['alamat'] )
-        return redirect('karyawan')
+        return redirect('/datakaryawan')
 
     tasks = models.Karyawan.objects.all()
     return render(req, 'karyawan/index.html',{

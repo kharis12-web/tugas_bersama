@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'stokkopi',
     'buy',
     'datakaryawan',
+    'minuman',
     
 ]
 
