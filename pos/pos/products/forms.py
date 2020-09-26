@@ -6,3 +6,8 @@ class Prod(ModelForm):
 	class Meta:
 		model=models.Prod
 		exclude=[]
+
+class Cate(ModelForm):
+	class Meta:
+		model=models.Cate
+		exclude=[]

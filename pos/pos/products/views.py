@@ -8,6 +8,12 @@ def index(req):
 		'data' : prod,
 		})
 
+def category(req):
+	cate = models.Cate.objects.all()
+	return render(req, 'category/category.html', {
+		'data' : cate,
+		})
+
 def input(req):
 	form = forms.Prod()
 
@@ -23,23 +29,51 @@ def input(req):
 		'form' : form,
 		})
 
-def update(req, id):
+def input_c(req):
+	form = forms.Cate()
+
 	if req.POST:
-		models.Prod.objects.filter(pk=id).update(
-			kode = req.POST['kode'],
-			name = req.POST['name'],
-			price = req.POST['price'])
+		form = forms.Cate(req.POST)
+		if form.is_valid():
+			form.save()
+		return redirect('/products/category')
+
+	cate = models.Cate.objects.all()
+	return render(req, 'category/input_category.html', {
+		'data' : cate,
+		'form' : form,
+		})
+
+def update(req, id):
+	form = forms.Prod()
+
+	if req.POST:
+		form = forms.Prod(req.POST)
+		if form.is_valid():
+			form.update()
+			form.save()
 		return redirect('/products')
+	# if req.POST:
+	# 	models.Prod.objects.filter(pk=id).update(
+	# 		kode = req.POST['kode'],
+	# 		name = req.POST['name'],
+	# 		price = req.POST['price'],
+	# 		stok = req.POST['stok'])
+	# 	return redirect('/products')
 
 	prod = models.Prod.objects.filter(pk=id).first()
 	return render(req, 'products/update.html', {
 		'data' : prod,
+		'form' : form,
 		})
 
 def delete(req, id):
 	models.Prod.objects.filter(pk=id).delete()
 	return redirect('/products')
 
+def delete_c(req, id):
+	models.Cate.objects.filter(pk=id).delete()
+	return redirect('/products/category')
 # # VIEWS CATEGORY # VIEWS CATEGORY # VIEWS CATEGORY # VIEWS CATEGORY
 # def category(req):
 # 	cate = models.Cate.objects.all()

@@ -7,13 +7,16 @@ class Sale(models.Model):
 	date = models.DateField(default=datetime.now)
 	# cust = models.ForeignKey(customers_models.Cust, on_delete=models.CASCADE, related_name='membeli')
 	products = models.ForeignKey(products_models.Prod, on_delete=models.CASCADE, related_name='terjual')
-	qty = models.IntegerField(default='')
+	qty = models.PositiveSmallIntegerField(default=0)
+	desc =models.TextField(default='')
 
-	def __str__(self):
-		return self.products, self.date, self.qty, self.cust
-
+	def __repr__(self):
+		return self.products, self.date, self.qty, self.products.stok
+		
 	def total(self):
 		return self.qty*self.products.price
 
-class Print(models.Model):
-	print = models.ForeignKey(Sale, on_delete=models.CASCADE)
+	def stok(self):
+		return self.products.stok-self.qty
+
+

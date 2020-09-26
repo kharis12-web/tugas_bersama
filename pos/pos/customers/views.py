@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from . import models
-# Create your views here.
+
 def index(req):
 	cust = models.Cust.objects.all()
 	return render(req, 'customers/index.html', {

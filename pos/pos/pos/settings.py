@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'sales',
     'home',
     'customers',
@@ -72,7 +73,7 @@ TEMPLATES = [
         },
     },
 ]
-
+CRISPY_TEMPLATES_PACK = 'bootstrap4'
 WSGI_APPLICATION = 'pos.wsgi.application'
 
 
@@ -133,3 +134,5 @@ STATICFILES_DIRS =[
     BASE_DIR + "/static",
     'var/www/static',
 ]
+
+USE_THOUSAND_SEPARATOR = True

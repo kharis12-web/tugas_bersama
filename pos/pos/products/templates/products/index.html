@@ -36,11 +36,12 @@
 								<thead>
 									<tr>
 										<th>#</th>
+										<th>Kategori</th>
 										<th>Kode</th>
 										<th>Nama</th>
+										<TH>Stok</TH>
 										<th>harga</th>
-										<th>actions</th>
-										
+										<th>actions</th>	
 									</tr>
 								</thead>
 						</div>
@@ -48,12 +49,14 @@
 				  		{% for d in data %}
 				    	<tr>
 				      		<th>{{forloop.counter}}</th>
+				      		<td>{{d.cate.name_c}}</td>
 				      		<td>{{d.kode}}</td>
-				      		<td>{{d.name}}</td>
+							<td>{{d.name}}</td>
+							<td>{{d.stok}}</td>
 	<!-- 			      		<td>#//#</td>
 				      		<td>#//#</td> -->
 				      		<td>Rp. {{d.price}}</td>
-				      		<!-- <td>#//#</td> -->
+							  <!-- <td>#//#</td> -->
 				      		<td>
 					    		<a type="button" class="btn btn-primary" href="{{d.id}}/update"><i class="fas fa-exchange-alt"></i></a>
 					    		<a type="button" class="btn btn-danger" href="{{d.id}}/delete"><i class="far fa-trash-alt"></i></a>	
